@@ -129,6 +129,14 @@ default_config = {
                     "model": "pull_request_analysis",
                     "repo_group_id": 0
                 },
+                {
+                    "delay": 100000,
+                    "given": [
+                        "git_url"
+                    ],
+                    "model": "location",
+                    "repo_group_id": 0
+                },
 
 	        {
 	    	"delay": 10000,
@@ -159,6 +167,11 @@ default_config = {
             "github_worker": {
                 "port": 50200,
                 "switch": 1,
+                "workers": 1
+            },
+            "jayhawks_worker": {
+                "port": 50250,
+                "switch": 0,
                 "workers": 1
             },
             "insight_worker": {
@@ -232,21 +245,21 @@ default_config = {
                 "insight_days": 30
             },
             "discourse_analysis_worker":{
-	    "port" : 51500,
-	    "switch": 0,
-	    "workers": 1
+        	    "port" : 51500,
+        	    "switch": 0,
+        	    "workers": 1
 
-	    },
-	    "clustering_worker": {
-            "port": 51600,
-            "switch": 0,
-            "workers": 1,
-	    "max_df" : 0.9,
-	    "max_features" : 1000,
-	    "min_df": 0.1,
-	    "num_clusters" : 4
+        	    },
+        	"clustering_worker": {
+                    "port": 51600,
+                    "switch": 0,
+                    "workers": 1,
+        	    "max_df" : 0.9,
+        	    "max_features" : 1000,
+        	    "min_df": 0.1,
+        	    "num_clusters" : 4
 
-        }
+                }
         },
         "Facade": {
             "check_updates": 1,
